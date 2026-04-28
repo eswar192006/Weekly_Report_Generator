@@ -1,0 +1,58 @@
+ wan<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReportGenie AI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div>
+        <span class="eyebrow">ReportGenie AI</span>
+        <h1>Automated KPI reporting with tool-augmented LLM workflows</h1>
+        <p>Upload your sales CSV and let AI calculate KPIs, generate charts, and deliver an executive-ready report instantly.</p>
+      </div>
+      <div class="hero-card">
+        <h2>Upload your CSV</h2>
+        <form id="upload-form">
+          <div class="file-input-wrap">
+            <label class="file-input" for="csv-file-input">
+              <span id="file-placeholder">Select a CSV file</span>
+              <strong id="selected-file-name" hidden></strong>
+            </label>
+            <button type="button" id="remove-file" aria-label="Remove selected file" hidden>x</button>
+            <input id="csv-file-input" type="file" name="file" accept=".csv" required />
+          </div>
+          <button type="submit">Generate Report</button>
+          <button type="button" id="load-sample">Load Sample Data</button>
+        </form>
+      </div>
+    </header>
+
+    <main class="results" hidden>
+      <section class="summary-card">
+        <div class="summary-header">
+          <h2>Report Summary</h2>
+          <a id="html-link" class="pill" target="_blank">Open HTML Report</a>
+        </div>
+        <p id="report-summary"></p>
+      </section>
+
+      <section class="kpi-grid" id="kpi-grid"></section>
+
+      <section class="charts" id="charts"></section>
+
+      <section class="insights-card">
+        <h2>Insights</h2>
+        <div id="insights"></div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
